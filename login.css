@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    background: radial-gradient(circle at top, #6a85ff, #2c2c54);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 18px 0 25px;
+}
+
+.social {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #6a85ff, #8e2de2);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    transition: all 0.2s ease;
+}
+
+.social:hover {
+    background: #fff;
+    color: #6a85ff;
+    transform: translateY(-3px);
+}
+
+.social:active {
+    transform: scale(0.95);
+}
+
+.container {
+    position: relative;
+    width: 900px;
+    height: 520px;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(#fff, #fff) padding-box,
+              linear-gradient(135deg, #6980e6, #984cdb) border-box;
+    border: 2px solid transparent;
+}
+
+.panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.9s cubic-bezier(.68, -0.55, .27, 1.55);
+}
+
+.panel-left {
+    left: 0;
+}
+
+.panel-right {
+    left: 50%;
+    transform: translateX(100%);
+}
+
+input {
+    margin: 10px 0;
+    padding: 14px;
+    border-radius: 10px;
+    border: none;
+    background: #f1f3f6;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #6a85ff88;
+}
+
+button {
+    margin-top: 20px;
+    padding: 14px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.primary {
+    background: linear-gradient(135deg, #6a85ff, #8e2de2);
+    color: #fff;
+    transition: transform 0.15s ease, box-shadow 0.15s;
+}
+
+.primary:hover {
+    box-shadow: 0 10px 25px rgba(106, 133, 255, 0.45);
+}
+
+.ghost:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+.primary:active {
+    transform: scale(0.95);
+}
+
+.ghost {
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+}
+
+.slider {
+    position: absolute;
+    right: -1px;
+    width: calc(50% + 1px);
+    height: 100%;
+    background: linear-gradient(135deg, #6a85ff, #8e2de2);
+    transition: transform 0.9s cubic-bezier(.68, -0.55, .27, 1.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-content {
+    text-align: center;
+    color: white;
+}
+
+.container.active .slider {
+    transform: translateX(-100%) rotateY(-10deg);
+}
+
+.container.active .panel-left {
+    transform: translateX(-100%);
+}
+
+.container.active .panel-right {
+    transform: translateX(0);
+}
